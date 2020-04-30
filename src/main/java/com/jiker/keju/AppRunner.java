@@ -4,12 +4,12 @@ public class AppRunner {
 
     public static void main(String[] args) {
         /*TODO
-          1. args[0]ä¸ºresourcesä¸‹çš„æµ‹è¯•æ•°æ®æ–‡ä»¶åï¼Œä¾‹å¦‚ä¼ å…¥çš„args[0]å€¼ä¸º"testData.txt"ï¼Œæ³¨æ„å¹¶ä¸åŒ…å«æ–‡ä»¶è·¯å¾„ã€‚
-          2. ä½ å†™çš„ç¨‹åºå°†æŠŠtestDataFileä½œä¸ºå‚æ•°åŠ è½½æ­¤æ–‡ä»¶å¹¶è¯»å–æ–‡ä»¶å†…çš„æµ‹è¯•æ•°æ®ï¼Œå¹¶å¯¹æ¯æ¡æµ‹è¯•æ•°æ®è®¡ç®—ç»“æœã€‚
-          3. å°†æ‰€æœ‰è®¡è´¹ç»“æœæ‹¼æ¥å¹¶ä½¿ç”¨\nåˆ†å‰²ï¼Œç„¶åä¿å­˜åˆ°receiptå˜é‡ä¸­ã€‚
+          1. args[0]ÎªresourcesÏÂµÄ²âÊÔÊı¾İÎÄ¼şÃû£¬ÀıÈç´«ÈëµÄargs[0]ÖµÎª"testData.txt"£¬×¢Òâ²¢²»°üº¬ÎÄ¼şÂ·¾¶¡£
+          2. ÄãĞ´µÄ³ÌĞò½«°ÑtestDataFile×÷Îª²ÎÊı¼ÓÔØ´ËÎÄ¼ş²¢¶ÁÈ¡ÎÄ¼şÄÚµÄ²âÊÔÊı¾İ£¬²¢¶ÔÃ¿Ìõ²âÊÔÊı¾İ¼ÆËã½á¹û¡£
+          3. ½«ËùÓĞ¼Æ·Ñ½á¹ûÆ´½Ó²¢Ê¹ÓÃ\n·Ö¸î£¬È»ºó±£´æµ½receipt±äÁ¿ÖĞ¡£
          */
         String testDataFile = args[0];
-        String receipt = "";
+        String receipt = new TddTaxi(testDataFile).getReceipt();
         System.out.println(receipt);
     }
 }
