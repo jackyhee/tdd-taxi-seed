@@ -3,12 +3,12 @@ package com.jiker.keju;
 import java.io.File;
 
 public class TaxiPrice {
-    private static final int PRICE_LEVEL_0 = 6;// Æğ²½¼Û
-    private static final int DIST_LEVEL_0 = 2;// Æğ²½Àï³Ì
-    private static final int DIST_LEVEL_1 = 8;// Æğ²½Àï³Ì
-    private static final float PRICE_PER_KM = 0.8f;// ³¬¹ı2¹«ÀïºóĞ¡ÓÚ8¹«Àï£¨º¬£©µÄµ¥¼Û
-    private static final float PRICE_EXTR_PER_KM = PRICE_PER_KM * 0.5f;// ³¬¹ı8¹«ÀïºóµÄµ¥¼Û
-    private static final float PRICE_PER_MIN = 0.25f;// Ã¿·ÖÖÓµÈ´ıµÄµ¥¼Û
+    private static final int PRICE_LEVEL_0 = 6;// èµ·æ­¥ä»·
+    private static final int DIST_LEVEL_0 = 2;// èµ·æ­¥é‡Œç¨‹
+    private static final int DIST_LEVEL_1 = 8;// èµ·æ­¥é‡Œç¨‹
+    private static final float PRICE_PER_KM = 0.8f;// è¶…è¿‡2å…¬é‡Œåå°äº8å…¬é‡Œï¼ˆå«ï¼‰çš„å•ä»·
+    private static final float PRICE_EXTR_PER_KM = PRICE_PER_KM * 0.5f;// è¶…è¿‡8å…¬é‡Œåçš„å•ä»·
+    private static final float PRICE_PER_MIN = 0.25f;// æ¯åˆ†é’Ÿç­‰å¾…çš„å•ä»·
 
     private static float priceFromDistance(int distance) {
         float ret = PRICE_LEVEL_0;

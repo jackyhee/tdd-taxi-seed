@@ -2,6 +2,9 @@ package com.jiker.keju;
 
 import org.junit.Test;
 
+import java.io.UnsupportedEncodingException;
+import java.nio.charset.Charset;
+
 import static junit.framework.TestCase.assertEquals;
 import static junit.framework.TestCase.assertNull;
 
@@ -9,13 +12,27 @@ public class FileUtilsTest {
 
     @Test
     public void readFileByLine() {
+        final String line1 = "1鍏噷,绛夊緟0鍒嗛挓";
+        final String line2 = "3鍏噷,绛夊緟0鍒嗛挓";
+        final String line3 = "10鍏噷,绛夊緟0鍒嗛挓";
+        final String line4 = "2鍏噷,绛夊緟3鍒嗛挓";
+
+
         FileUtils fileUtils = new FileUtils();
         String[] strings = fileUtils.readFileByLine("src/main/resources/testData.txt");
+        assertEquals(getUtf8String(line1),strings[0]);
+        assertEquals( getUtf8String("3鍏噷,绛夊緟0鍒嗛挓"),strings[1]);
+        assertEquals(getUtf8String("10鍏噷,绛夊緟0鍒嗛挓"),strings[2]);
+        assertEquals(getUtf8String("2鍏噷,绛夊緟3鍒嗛挓"),strings[3]);
         assertNull(fileUtils.readFileByLine("test.aa"));
-        assertEquals("1公里,等待0分钟",strings[0]);
-        assertEquals("3公里,等待0分钟",strings[1]);
-        assertEquals("10公里,等待0分钟",strings[2]);
-        assertEquals("2公里,等待3分钟",strings[3]);
     }
 
+    private String getUtf8String(String str) {
+        try {
+            return new String(str.getBytes(Charset.defaultCharset()), "utf-8");
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+        return "";
+    }
 }
